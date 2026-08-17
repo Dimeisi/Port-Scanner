@@ -7,10 +7,11 @@ import time
 from unittest import result
 from urllib.parse import _ResultMixinStr
 
-host = "37.99.26.101"
-port = 80
-ports = 22, 80, 443 # 22 - SSH, 80 - HTTP, 443 - HTTPS
-testhost = "https://www.youtube.com/" #Рабочий хост для теста
+host = input("Enter host IP address: ")
+portone = 22
+porttwo = 80
+portthree = 443
+ports = portone, porttwo, portthree
 
 # First version scan port
 def scan_port(host, ports):
@@ -42,11 +43,4 @@ def scan_ports(host, ports):
                 results.append(result)
             except Exception as e:
                 results.append(f"Error scanning port {port} on {host}: {e}")
-    print("Scanning ports on host:", host)
-    print("Scanning ports:", ports)
-    print("Port scan completed.")
     return results
-print("Starting port scan...")
-print("Scanning ports:", scan_ports(host, ports))
-# Временно print("Scanning ports:", scan_ports(testhost, ports))
-print("Port scan completed.")
