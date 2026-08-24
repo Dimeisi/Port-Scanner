@@ -14,3 +14,5 @@ It helps detect exposed services and potential security risks.
 
 ## Installation
 
+```bash
+py work.py
